@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cbn2jqcslujp8"]
+
+[ext_resource type="Script" uid="uid://yggec4c3irbc" path="res://scenes/opponent.gd" id="1_ha0xr"]
+[ext_resource type="Texture2D" uid="uid://dbij7x321nfpg" path="res://art/Sketch Assets/Opponent.png" id="1_ocjdi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ha0xr"]
+
+[node name="Opponent" type="PanelContainer" unique_id=1592618247]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1171.0
+offset_bottom = -417.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ha0xr")
+script = ExtResource("1_ha0xr")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2084259570]
+layout_mode = 2
+texture = ExtResource("1_ocjdi")
+stretch_mode = 2

@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://cnnthot0gwh0t"]
 
-[ext_resource type="Script" path="res://scenes/game.gd" id="1_lnu2h"]
-[ext_resource type="Texture2D" uid="uid://djwqa0ggpv6vp" path="res://art/background.png" id="1_yqjtg"]
+[ext_resource type="Script" uid="uid://cw2efspuhfk0y" path="res://scenes/game.gd" id="1_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://bpl07j27ecpup" path="res://art/Sketch Assets/Background.png" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dl4o261xicr6v" path="res://scenes/card.tscn" id="2_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://kb06qr4wrry3" path="res://scenes/bar.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://bf1of67no735k" path="res://scenes/player.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://cbn2jqcslujp8" path="res://scenes/opponent.tscn" id="5_iywne"]
 
 [node name="Game" type="Control" unique_id=1037051251]
 layout_mode = 3
@@ -14,16 +15,42 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lnu2h")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=942513570]
+[node name="background" type="TextureRect" parent="." unique_id=942513570]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_yqjtg")
+texture = ExtResource("2_lbhrr")
+expand_mode = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1929920002]
+[node name="Player" parent="." unique_id=465876557 instance=ExtResource("4_lbhrr")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = 40.0
+offset_top = -667.0
+offset_right = 556.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 0
+
+[node name="Opponent" parent="." unique_id=1592618247 instance=ExtResource("5_iywne")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+offset_left = -749.0
+offset_top = -663.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="masksContainer" type="HBoxContainer" parent="." unique_id=1929920002]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 96)
 layout_mode = 1
 anchors_preset = 12
@@ -35,7 +62,7 @@ grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 
-[node name="PanelContainer" parent="HBoxContainer" unique_id=619354858 instance=ExtResource("2_lnu2h")]
+[node name="PanelContainer" parent="masksContainer" unique_id=619354858 instance=ExtResource("2_lnu2h")]
 layout_mode = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1174483061]

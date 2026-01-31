@@ -1,5 +1,14 @@
 [gd_scene format=3 uid="uid://tk8t8y5sfpp3"]
 
+[ext_resource type="Script" uid="uid://duu0dbg2x5rbe" path="res://scenes/main_menu.gd" id="1_l6cm7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_size = 5
+
 [node name="MainMenu" type="Control" unique_id=967982782]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +16,70 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_l6cm7")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1582529255]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -283.5
+offset_top = -222.5
+offset_right = 283.5
+offset_bottom = 222.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="MainMenuLabel" type="Label" parent="VBoxContainer2" unique_id=241807482]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 45
+text = "Main Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartGameButton" type="Button" parent="VBoxContainer2" unique_id=138709510]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+text = "Start Game"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2" unique_id=437264427]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VolumeLabel" type="Label" parent="VBoxContainer2/VBoxContainer" unique_id=1423072035]
+layout_mode = 2
+size_flags_vertical = 7
+text = "Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2/VBoxContainer" unique_id=1250195751]
+layout_mode = 2
+size_flags_vertical = 7
+alignment = 1
+
+[node name="VolumeSlider" type="HSlider" parent="VBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1548281146]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="MuteSoundCheckbox" type="CheckBox" parent="VBoxContainer2/VBoxContainer/HBoxContainer" unique_id=2007772974]
+layout_mode = 2
+text = "Mute"
+
+[node name="ExitGameButton" type="Button" parent="VBoxContainer2" unique_id=1296279009]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 28
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer2/StartGameButton" to="." method="_on_start_pressed"]
+[connection signal="value_changed" from="VBoxContainer2/VBoxContainer/HBoxContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="toggled" from="VBoxContainer2/VBoxContainer/HBoxContainer/MuteSoundCheckbox" to="." method="_on_mute_sound_checkbox_toggled"]
+[connection signal="pressed" from="VBoxContainer2/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
