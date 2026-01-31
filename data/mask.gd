@@ -31,7 +31,6 @@ const DISADV_BY_DISTANCE := {
 
 @export var name: String = ""
 @export var description: String = ""
-@export var damage: float = 1.0
 @export var icon: Texture2D
 @export var maskType: MaskType
 
@@ -52,10 +51,10 @@ static func calc_damage_multiplier(enemyMask: MaskType, playerMask: MaskType) ->
 	else:
 		return 1.0
 
-func calc_damage_dealt(enemyMask: MaskType) -> float:
-	var multiplier = calc_damage_multiplier(enemyMask, maskType)
+static func calc_damage_dealt(enemyMask: MaskType, playerMask: MaskType) -> float:
+	var multiplier = calc_damage_multiplier(enemyMask, playerMask)
 	
-	return damage * multiplier
+	return 1.0 * multiplier
 
 # Prints out the damage matrix
 # Rows = attacker, Columns = defender

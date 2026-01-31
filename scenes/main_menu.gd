@@ -5,6 +5,21 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Mask.print_multiplier_matrix()
+	
+	var health = 0.0
+	
+	var playerCard = Mask.new()
+	playerCard.maskType = Mask.MaskType.Embarassment
+	var enemyCard = Mask.new()
+	enemyCard.maskType = Mask.MaskType.ConfidentLie
+	
+	var playerDamage = Mask.calc_damage_dealt(enemyCard.maskType, playerCard.maskType)
+	var enemyDamage = Mask.calc_damage_dealt(playerCard.maskType, enemyCard.maskType)
+	
+	health -= playerDamage - enemyDamage
+	print("playerDamage: {0}; enemyDamage: {1}; health: {2}".format([playerDamage, enemyDamage, health]))
+	
 	pass # Replace with function body.
 
 
