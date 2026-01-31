@@ -80,7 +80,7 @@ static func calc_damage_multiplier(enemyMask: MaskType, playerMask: MaskType) ->
 
 static func calc_damage_dealt(enemyMask: MaskType, playerMask: MaskType) -> float:
 	var multiplier = calc_damage_multiplier(enemyMask, playerMask)
-	
+
 	return 1.0 * multiplier
 
 # Prints out the damage matrix

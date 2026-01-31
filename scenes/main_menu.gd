@@ -6,14 +6,14 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Mask.print_multiplier_matrix()
-	
+
 	var playerCard = Mask.new()
 	playerCard.maskType = Mask.MaskType.Embarassment
 	var enemyCard = Mask.new()
 	enemyCard.maskType = Mask.MaskType.ConfidentLie
-	
+
 	HealthManager.calculate_new_health(playerCard, enemyCard)
-	
+
 	pass # Replace with function body.
 
 
