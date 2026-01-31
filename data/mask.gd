@@ -3,15 +3,15 @@ class_name Mask
 
 const N_MASK_TYPES := 9
 enum MaskType {
-	EmotionalManipulation,
 	Embarassment,
 	ConfidentLie,
 	Facts,
-	ShiftTheBlame,
-	CallInSick,
-	BrownNosing,
+	Rage,
 	Insult,
-	Rage
+	BrownNosing,
+	EmotionalManipulation,
+	ShiftTheBlame,
+	CallInSick
 }
 
 const ADV_BY_DISTANCE := {
