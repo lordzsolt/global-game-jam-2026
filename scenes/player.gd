@@ -1,5 +1,7 @@
 extends PanelContainer
 
+@onready var dialog_manager: Control = $DialogManager
+
 
 func _input(_event: InputEvent) -> void:
 	if !Input.is_action_just_released("mouse_left"):
@@ -14,6 +16,9 @@ func _input(_event: InputEvent) -> void:
 		return
 
 	%maskTexture.visible = true
+	var lines: Array[String] = ["Hehe!", "Im so cool.", "The coolness emotion beats all other emotions, as well as the elements themselves :P"]
+	dialog_manager.start_dialog(lines)
+
 
 
 func _on_mask_area_mouse_entered() -> void:

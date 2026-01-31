@@ -16,6 +16,11 @@ signal finished_displaying()
 
 
 func display_text(text_to_display: String) -> void:
+	#Realign to bottom left:
+	global_position.y -= size.y
+	
+	
+	print("actual button global pos:" + str(global_position))
 	text = text_to_display
 	label.text = text_to_display
 	
@@ -28,8 +33,10 @@ func display_text(text_to_display: String) -> void:
 		await resized # wait for y to resize
 		custom_minimum_size.y = size.y
 	
-	global_position.x = size.x / 2
-	global_position.y = size.y + 24
+	#global_position.x -= size.x / 2
+	
+	
+	print("afterw button global pos:" + str(global_position))
 	
 	label.text = ""
 	_display_letter()

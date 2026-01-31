@@ -1,8 +1,9 @@
-[gd_scene format=3 uid="uid://c6n6jrfe0ix45"]
+[gd_scene format=3 uid="uid://g2qat42rhqve"]
 
 [ext_resource type="Texture2D" uid="uid://dtumy1ql8jx1k" path="res://art/Sketch Assets/Player.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://dadov2vc0yjlt" path="res://scenes/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://os87rm22f3o4" path="res://art/Sketch Assets/WornMask.png" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://bf4kssuf5hvi5" path="res://scenes/DialogManager.gd" id="4_dqkch"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3vyb7"]
 
@@ -10,7 +11,7 @@
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1404.0
+offset_right = -1403.999
 offset_bottom = -413.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -43,6 +44,22 @@ anchor_bottom = 0.58
 grow_horizontal = 2
 texture = ExtResource("3_qhqgy")
 expand_mode = 1
+
+[node name="DialogManager" type="Control" parent="." unique_id=127698833]
+layout_mode = 2
+script = ExtResource("4_dqkch")
+
+[node name="SpeechBubblePoint" type="Panel" parent="DialogManager" unique_id=1990778528]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75000006
+anchor_top = 0.19800001
+anchor_right = 0.75000006
+anchor_bottom = 0.19800001
+offset_left = -7.000763
+offset_top = 4.9339905
+offset_right = -7.000763
+offset_bottom = 4.9339905
 
 [connection signal="mouse_entered" from="TextureRect/maskArea" to="." method="_on_mask_area_mouse_entered"]
 [connection signal="mouse_exited" from="TextureRect/maskArea" to="." method="_on_mask_area_mouse_exited"]

@@ -2,6 +2,8 @@ extends Node
 
 @onready var text_box_scene = preload("res://text_box.tscn")
 
+# Places the speech bubble.
+@onready var speech_bubble_point: Panel = $SpeechBubblePoint
 
 
 var dialog_lines: Array[String] = []
@@ -13,12 +15,12 @@ var text_box_position: Vector2
 var is_dialog_active = false
 var can_advance_line = false
 
-func start_dialog(position: Vector2, lines: Array[String]) -> void:
+func start_dialog(lines: Array[String]) -> void:
 	if is_dialog_active:
 		return #One DialogManager only does one Dialog at a time
 		
 	dialog_lines = lines
-	text_box_position = position
+	text_box_position = speech_bubble_point.global_position
 	_show_text_box()
 	
 	is_dialog_active = true
