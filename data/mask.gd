@@ -54,6 +54,29 @@ static func icon(maskType: Mask.MaskType) -> Texture2D:
 		_:
 			return null
 
+static func worn_icon(maskType: MaskType) -> Texture2D:
+	match maskType:
+		MaskType.EmotionalManipulation:
+			return GResource.worn_emotionalManipulationTexture
+		MaskType.Embarass:
+			return GResource.worn_embarassmentTexture
+		MaskType.ConfidentLie:
+			return GResource.worn_confidentLieTexture
+		MaskType.Facts:
+			return GResource.worn_factsTexture
+		MaskType.ShiftTheBlame:
+			return GResource.worn_shiftTheBlameTexture
+		MaskType.CallInSick:
+			return GResource.worn_callInSickTexture
+		MaskType.BrownNosing:
+			return GResource.worn_brownNosingTexture
+		MaskType.Insult:
+			return GResource.worn_insultTexture
+		MaskType.Rage:
+			return GResource.worn_rageTexture
+		_:
+			return null
+
 static func calculate_damage(enemyMask: MaskType, playerMask: MaskType) -> float:
 	var distance = abs(enemyMask - playerMask)
 	return DAMAGE_BY_DISTANCE[distance]

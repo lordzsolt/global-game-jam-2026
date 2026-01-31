@@ -31,6 +31,7 @@ expand_mode = 1
 
 [node name="label" type="Label" parent="Panel" unique_id=1624280216]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
