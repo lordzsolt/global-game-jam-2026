@@ -52,3 +52,9 @@ func _unhandled_input(event):
 			return
 
 		_show_text_box()
+
+func interrupt_dialogue():
+	if text_box != null:
+		text_box.queue_free()
+	is_dialog_active = false
+	current_lin_index = 0

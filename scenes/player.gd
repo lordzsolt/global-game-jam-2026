@@ -20,9 +20,13 @@ func _input(_event: InputEvent) -> void:
 		%maskTexture.texture = Mask.worn_icon(mask_type)
 		%maskTexture.visible = true
 		DeckManager.play_card(GState.draggable_mask.index)
-
+		
+		# Get dialogue line
 		var dialog_line = DialogOptionsManager.select_dialog_line(mask_type)
 		print(Mask.MaskType.keys()[mask_type], ": ", dialog_line)
+		
+		# Display it
+		dialog_manager.interrupt_dialogue()
 		var array: Array[String] = [dialog_line]
 		dialog_manager.start_dialog(array)
 
