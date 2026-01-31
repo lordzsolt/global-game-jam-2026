@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dtumy1ql8jx1k" path="res://art/Sketch Assets/Player.png" id="1_3vyb7"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3vyb7"]
+
 [node name="Player" type="PanelContainer" unique_id=465876557]
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,6 +12,7 @@ offset_right = -1404.0
 offset_bottom = -413.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3vyb7")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=504603977]
 layout_mode = 2
