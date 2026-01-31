@@ -9,7 +9,7 @@ var text : String = ""
 var letter_index : int = 0
 
 var letter_time: float = 0.03
-var space_time : float = 0.06 
+var space_time : float = 0.06
 var punctuation_time : float = 0.2
 
 signal finished_displaying()
@@ -23,10 +23,10 @@ func display_text(text_to_display: String) -> void:
 	print("actual button global pos:" + str(global_position))
 	text = text_to_display
 	label.text = text_to_display
-	
+
 	await resized # wait for x to resize
 	custom_minimum_size.x = min(size.x, MAX_WIDTH)
-	
+
 	if size.x > MAX_WIDTH:
 		label.autowrap_mode = TextServer.AUTOWRAP_WORD
 		await resized # wait for x to resize
@@ -35,20 +35,19 @@ func display_text(text_to_display: String) -> void:
 	
 	#global_position.x -= size.x / 2
 	
-	
 	print("afterw button global pos:" + str(global_position))
-	
+
 	label.text = ""
 	_display_letter()
-	
+
 func _display_letter() -> void:
 	label.text += text[letter_index]
-	
+
 	letter_index += 1
 	if letter_index >= text.length():
 		finished_displaying.emit()
 		return
-		
+
 	match text[letter_index]:
 		"!", "?", ".", ",":
 			timer.start(punctuation_time)
