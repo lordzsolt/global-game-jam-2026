@@ -15,5 +15,9 @@ func _input(_event: InputEvent) -> void:
 		%maskTexture.visible = true
 		DeckManager.play_card(GState.draggable_mask.index)
 
+		var mask_type = GState.draggable_mask.mask.maskType
+		var dialog_line = DialogOptionsManager.select_dialog_line(mask_type)
+		print(Mask.MaskType.keys()[mask_type], ": ", dialog_line)
+
 	GState.draggable_mask.visible = false
 	GState.draggable_mask.mask = null

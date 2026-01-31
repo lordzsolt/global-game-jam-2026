@@ -11,9 +11,12 @@ var available_masks: Array[Mask.MaskType] = [
 	Mask.MaskType.Embarass,
 	Mask.MaskType.Rage,
 	Mask.MaskType.BrownNosing,
-	Mask.MaskType.ShiftTheBlame
+	Mask.MaskType.ShiftTheBlame,
 ]
 
 var inventory: Array[Mask.MaskType] = []
 var deck: Array[Mask.MaskType] = []
 var discard_pile: Array[Mask.MaskType] = []
+
+
+var available_lines: Dictionary[Mask.MaskType, Array]
