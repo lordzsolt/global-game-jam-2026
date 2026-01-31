@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://kb06qr4wrry3"]
+[gd_scene format=3 uid="uid://37opfwfq2i2e"]
 
 [ext_resource type="Texture2D" uid="uid://dhaft1f27ojf2" path="res://art/Sketch Assets/ProgressbarSlider.png" id="1_bwlfd"]
 [ext_resource type="Texture2D" uid="uid://0i3lq4hq827" path="res://art/Sketch Assets/ProgressBar.png" id="2_x848m"]
@@ -17,11 +17,11 @@ expand_margin_bottom = 40.0
 
 [node name="ConversationBar" type="HSlider" unique_id=1897308321]
 anchors_preset = -1
-anchor_right = 0.56600004
-anchor_bottom = 0.128
+anchor_right = 0.34
+anchor_bottom = 0.07700001
 offset_left = 1.0
-offset_right = -0.032043457
-offset_bottom = 0.055999756
+offset_right = 0.2000122
+offset_bottom = -0.16001129
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/center_grabber = 0
@@ -39,21 +39,31 @@ editable = false
 script = ExtResource("3_x848m")
 
 [node name="Substract" type="Button" parent="." unique_id=1802930152 node_paths=PackedStringArray("bar")]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 32.0
-offset_right = 192.0
-offset_bottom = 69.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.386
+anchor_right = 0.294
+anchor_bottom = 0.83100003
+offset_left = 0.048000336
+offset_top = -0.038002014
+offset_right = 0.31199646
+offset_bottom = 0.027000427
 text = "EMOTIONAL DAMAGE"
 script = ExtResource("4_qdsxc")
 bar = NodePath("..")
 
 [node name="Add" type="Button" parent="." unique_id=1821125769 node_paths=PackedStringArray("bar")]
-layout_mode = 0
-offset_left = 462.0
-offset_top = 32.0
-offset_right = 637.0
-offset_bottom = 69.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.70900005
+anchor_top = 0.386
+anchor_right = 0.97700006
+anchor_bottom = 0.83100003
+offset_left = -0.2680359
+offset_top = -0.038002014
+offset_right = -0.0040283203
+offset_bottom = 0.027000427
 text = "BURN THEM"
 script = ExtResource("5_efgdo")
 bar = NodePath("..")

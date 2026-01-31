@@ -17,7 +17,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-DialogManager="*uid://bf4kssuf5hvi5"
 GState="*uid://wb86sw602yqf"
 GResource="*uid://dh5j41ulr12lu"
 DialogOptionsManager="*uid://hkmcktpvignh"
