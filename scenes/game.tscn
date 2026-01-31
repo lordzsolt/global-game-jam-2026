@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://cnnthot0gwh0t"]
 
-[ext_resource type="Script" uid="uid://cw2efspuhfk0y" path="res://scenes/game.gd" id="1_lnu2h"]
+[ext_resource type="Script" path="res://scenes/game.gd" id="1_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://djwqa0ggpv6vp" path="res://art/background.png" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dl4o261xicr6v" path="res://scenes/card.tscn" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://kb06qr4wrry3" path="res://scenes/bar.tscn" id="4_lbhrr"]
 
 [node name="Game" type="Control" unique_id=1037051251]
 layout_mode = 3
@@ -35,4 +36,21 @@ grow_vertical = 0
 alignment = 1
 
 [node name="PanelContainer" parent="HBoxContainer" unique_id=619354858 instance=ExtResource("2_lnu2h")]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1174483061]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -323.0
+offset_top = -184.0
+offset_right = 327.0
+offset_bottom = -101.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ConversationBar" parent="HBoxContainer2" unique_id=1897308321 instance=ExtResource("4_lbhrr")]
 layout_mode = 2
