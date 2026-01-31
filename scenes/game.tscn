@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bpl07j27ecpup" path="res://art/Sketch Assets/Background.png" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dl4o261xicr6v" path="res://scenes/card.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://c6n6jrfe0ix45" path="res://scenes/player.tscn" id="4_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://bavxobmr4gktb" path="res://scenes/opponent.tscn" id="5_iywne"]
-[ext_resource type="PackedScene" uid="uid://37opfwfq2i2e" path="res://scenes/bar.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://cbn2jqcslujp8" path="res://scenes/opponent.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://kb06qr4wrry3" path="res://scenes/bar.tscn" id="6_p57ef"]
 
 [node name="Game" type="Control" unique_id=1037051251]
 layout_mode = 3
@@ -54,16 +54,36 @@ grow_vertical = 0
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 96)
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = -1
+anchor_top = 0.9
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -96.0
 grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 
-[node name="PanelContainer" parent="masksContainer" unique_id=619354858 instance=ExtResource("2_lnu2h")]
+[node name="mask0" parent="masksContainer" unique_id=1214670042 instance=ExtResource("2_lnu2h")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="mask1" parent="masksContainer" unique_id=619354858 instance=ExtResource("2_lnu2h")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="mask2" parent="masksContainer" unique_id=428339676 instance=ExtResource("2_lnu2h")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="mask3" parent="masksContainer" unique_id=348766782 instance=ExtResource("2_lnu2h")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="mask4" parent="masksContainer" unique_id=521034854 instance=ExtResource("2_lnu2h")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="masksContainer" unique_id=741493596]
+custom_minimum_size = Vector2(0, 145)
 layout_mode = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1174483061]
@@ -74,11 +94,23 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -323.0
-offset_top = -184.0
+offset_top = -330.0
 offset_right = 327.0
-offset_bottom = -101.0
+offset_bottom = -247.0
 grow_horizontal = 2
 grow_vertical = 0
 
 [node name="ConversationBar" parent="HBoxContainer2" unique_id=1897308321 instance=ExtResource("6_p57ef")]
 layout_mode = 2
+
+[node name="draggedMask" parent="." unique_id=1385801975 instance=ExtResource("2_lnu2h")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 150.0
+offset_bottom = 145.0
+grow_horizontal = 1
+grow_vertical = 1
