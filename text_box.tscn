@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bddri6x0w3rrd"]
+
+[ext_resource type="Script" uid="uid://dqxackmi70gf3" path="res://text_box.gd" id="1_d0rgj"]
+[ext_resource type="Texture2D" uid="uid://dadss20krvd75" path="res://art/Sketch Assets/PlayerSpeechbubble.png" id="1_k7ve7"]
+
+[node name="TextBox" type="MarginContainer" unique_id=1510084869]
+offset_right = 136.0
+offset_bottom = 78.0
+script = ExtResource("1_d0rgj")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1276301562]
+layout_mode = 2
+texture = ExtResource("1_k7ve7")
+region_rect = Rect2(0, 0, 696, 192)
+patch_margin_left = 112
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 48
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=169285694]
+layout_mode = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 38
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=630856584]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+
+[node name="LetterDisplayTimer" type="Timer" parent="." unique_id=1489893536]
+one_shot = true
+
+[connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]
