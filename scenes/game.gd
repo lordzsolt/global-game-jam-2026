@@ -18,5 +18,5 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	for i in range(GState.inventory.size()):
 		var card = cards[i]
-		card.mask = Mask.create(GState.inventory[i])
+		card.maskType = GState.inventory[i]
 		card.index = i

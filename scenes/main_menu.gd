@@ -8,7 +8,7 @@ func _ready() -> void:
 	Mask.print_multiplier_matrix()
 
 	var playerCard = Mask.new()
-	playerCard.maskType = Mask.MaskType.Embarassment
+	playerCard.maskType = Mask.MaskType.Embarass
 	var enemyCard = Mask.new()
 	enemyCard.maskType = Mask.MaskType.ConfidentLie
 
