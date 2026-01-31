@@ -21,6 +21,7 @@ const ADV_BY_DISTANCE := {
 	3: 1.25,
 	4: 1.0
 }
+
 const DISADV_BY_DISTANCE := {
 	0: 1.0,
 	1: 0.0,
@@ -31,19 +32,45 @@ const DISADV_BY_DISTANCE := {
 
 @export var name: String = ""
 @export var description: String = ""
-@export var icon: Texture2D
 @export var maskType: MaskType
+
+static func create(maskType: MaskType) -> Mask:
+	var mask = Mask.new()
+	mask.maskType = type
+	return mask
+
+
+var icon: Texture2D:
+	get():
+		match maskType:
+			MaskType.EmotionalManipulation:
+				return GResource.emotionalManipulationTexture
+			MaskType.Embarassment:
+				return GResource.embarassmentTexture
+			MaskType.ConfidentLie:
+				return GResource.confidentLieTexture
+			MaskType.Facts:
+				return GResource.factsTexture
+			MaskType.ShiftTheBlame:
+				return GResource.shiftTheBlameTexture
+			MaskType.CallInSick:
+				return GResource.callInSickTexture
+			MaskType.BrownNosing:
+				return GResource.brownNosingTexture
+			MaskType.Insult:
+				return GResource.insultTexture
+			MaskType.Rage:
+				return GResource.rageTexture
+			_:
+				return null
 
 static func signed_ring_distance(attacker: MaskType, defender: MaskType, n: int = N_MASK_TYPES) -> int:
 	var half = n / 2
 	return int(posmod(defender - attacker + half, n)) - half
 
-#func calc_damage_dealt(enemyDefense: float) -> float:
-#	return damage - enemyDefense
-
 static func calc_damage_multiplier(enemyMask: MaskType, playerMask: MaskType) -> float:
 	var dist = signed_ring_distance(enemyMask, playerMask)
-	
+
 	if(dist > 0):
 		return float(ADV_BY_DISTANCE.get(abs(dist), 1.0))
 	elif(dist < 0):
@@ -64,7 +91,7 @@ static func print_multiplier_matrix() -> void:
 		header += " %6d" % def
 	print(header)
 	print("-".repeat(header.length()))
-	
+
 	for att in range(N_MASK_TYPES):
 		var line = "%7d |" % att
 		for def in range(N_MASK_TYPES):

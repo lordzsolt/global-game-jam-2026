@@ -1,6 +1,13 @@
-class_name GState
+extends Node
 
 # TODO: Change this
-var mask_on_cursor: int
-
 var health: float = 0.0
+var draggable_mask: Card
+
+var inventory: Array[Mask] = [
+	Mask.create(Mask.MaskType.EmotionalManipulation),
+	Mask.create(Mask.MaskType.EmotionalManipulation),
+	Mask.create(Mask.MaskType.EmotionalManipulation),
+	Mask.create(Mask.MaskType.EmotionalManipulation),
+	Mask.create(Mask.MaskType.EmotionalManipulation),
+]

@@ -3,16 +3,28 @@
 [ext_resource type="Script" uid="uid://bpbmyml5pewt3" path="res://scenes/card.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://cnm4l70bmvg36" path="res://art/Sketch Assets/MaskCardLady.png" id="2_6u4wf"]
 
-[node name="PanelContainer" type="PanelContainer" unique_id=619354858]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6u4wf"]
+
+[node name="PanelContainer" type="AspectRatioContainer" unique_id=1385801975]
+custom_minimum_size = Vector2(150, 145)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1052.0
-offset_bottom = -498.0
+offset_right = -1769.0
+offset_bottom = -935.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_script")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1104888339]
+[node name="Panel" type="Panel" parent="." unique_id=1465568406]
 layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6u4wf")
+
+[node name="maskTextureRect" type="TextureRect" parent="Panel" unique_id=1104888339]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 145.0
+offset_bottom = 145.0
 texture = ExtResource("2_6u4wf")
+expand_mode = 1
