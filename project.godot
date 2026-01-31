@@ -22,6 +22,7 @@ GState="*uid://wb86sw602yqf"
 GResource="*uid://dh5j41ulr12lu"
 DialogOptionsManager="*uid://hkmcktpvignh"
 Dialogs="*uid://cm0o12ht5jthr"
+DeckManager="*uid://ixlc0d4rgdiy"
 
 [display]
 

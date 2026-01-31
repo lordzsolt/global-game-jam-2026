@@ -5,6 +5,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	DeckManager.instance = DeckManager.new()
+
 	Mask.print_multiplier_matrix()
 
 	var playerCard = Mask.new()
