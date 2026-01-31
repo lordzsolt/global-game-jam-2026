@@ -5,6 +5,7 @@ var maskType: Mask.MaskType = -1
 var index: int
 
 var is_dragging := false
+
 var drag_offset := Vector2.ZERO
 var original_parent: Node = null
 
@@ -34,6 +35,7 @@ func _on_gui_input(event: InputEvent) -> void:
 
 func _start_drag() -> void:
 	is_dragging = true
+	GState.is_dragging = true
 
 	GState.draggable_mask.global_position = global_position
 	GState.draggable_mask.maskType = maskType
@@ -44,3 +46,4 @@ func _start_drag() -> void:
 
 func _stop_drag() -> void:
 	is_dragging = false
+	GState.is_dragging = false

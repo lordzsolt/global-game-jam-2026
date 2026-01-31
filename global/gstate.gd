@@ -1,5 +1,7 @@
 extends Node
 
+var is_dragging: bool
+
 var inventory_size = 5
 
 # TODO: Change this
@@ -17,6 +19,5 @@ var available_masks: Array[Mask.MaskType] = [
 var inventory: Array[Mask.MaskType] = []
 var deck: Array[Mask.MaskType] = []
 var discard_pile: Array[Mask.MaskType] = []
-
 
 var available_lines: Dictionary[Mask.MaskType, Array]

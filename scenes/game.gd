@@ -16,6 +16,9 @@ func _ready() -> void:
 		cards.append(card)
 
 func _process(_delta: float) -> void:
+	if GState.is_dragging:
+		return
+
 	for i in range(GState.inventory.size()):
 		var card = cards[i]
 		card.maskType = GState.inventory[i]

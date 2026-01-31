@@ -22,4 +22,4 @@ func _input(_event: InputEvent) -> void:
 		print(Mask.MaskType.keys()[mask_type], ": ", dialog_line)
 
 	GState.draggable_mask.visible = false
-	GState.draggable_mask.maskType = -1
+	GState.is_dragging = false
