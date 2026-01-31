@@ -1,10 +1,21 @@
 extends Control
 
+const CardScene = preload("res://scenes/card.tscn")
+
+var cards: Array[Card] = []
+
 func _ready() -> void:
 	GState.draggable_mask = %draggedMask
+	DeckManager.start_round()
 
-	%mask0.mask = GState.inventory[0]
-	%mask1.mask = GState.inventory[1]
-	%mask2.mask = GState.inventory[2]
-	%mask3.mask = GState.inventory[3]
-	%mask4.mask = GState.inventory[4]
+	# Create card instances dynamically
+	for i in range(GState.inventory_size):
+		var card = CardScene.instantiate()
+		%masksContainer.add_child(card)
+		cards.append(card)
+
+func _process(_delta: float) -> void:
+	for i in range(GState.inventory.size()):
+		var card = cards[i]
+		card.mask = Mask.create(GState.inventory[i])
+		card.index = i

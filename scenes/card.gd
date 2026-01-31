@@ -2,11 +2,11 @@ class_name Card # TODO: Rename this to InventoryMask
 extends AltAspectRatioContainer
 
 var mask: Mask
+var index: int
 
 var is_dragging := false
 var drag_offset := Vector2.ZERO
 var original_parent: Node = null
-var original_index: int = -1
 
 func _ready() -> void:
 	gui_input.connect(_on_gui_input)
@@ -14,8 +14,10 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if is_dragging || mask == null:
 		%maskTextureRect.texture = null
+		%label.text = ""
 	else:
 		%maskTextureRect.texture = mask.icon
+		%label.text = str(mask.maskType)
 
 	if !is_dragging:
 		return
@@ -35,12 +37,10 @@ func _start_drag() -> void:
 
 	GState.draggable_mask.global_position = global_position
 	GState.draggable_mask.mask = mask
+	GState.draggable_mask.index = index
 	GState.draggable_mask.visible = true
 
 	return
 
 func _stop_drag() -> void:
 	is_dragging = false
-	GState.draggable_mask.visible = false
-
-	# TODO: Decide if the player equipped the mask, or just let go of it

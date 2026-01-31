@@ -1,13 +1,19 @@
 extends Node
 
+var inventory_size = 5
+
 # TODO: Change this
 var health: float = 0.0
 var draggable_mask: Card
 
-var inventory: Array[Mask] = [
-	Mask.create(Mask.MaskType.EmotionalManipulation),
-	Mask.create(Mask.MaskType.EmotionalManipulation),
-	Mask.create(Mask.MaskType.EmotionalManipulation),
-	Mask.create(Mask.MaskType.EmotionalManipulation),
-	Mask.create(Mask.MaskType.EmotionalManipulation),
+
+var available_masks: Array[Mask.MaskType] = [
+	Mask.MaskType.Embarass,
+	Mask.MaskType.Rage,
+	Mask.MaskType.BrownNosing,
+	Mask.MaskType.ShiftTheBlame
 ]
+
+var inventory: Array[Mask.MaskType] = []
+var deck: Array[Mask.MaskType] = []
+var discard_pile: Array[Mask.MaskType] = []

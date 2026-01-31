@@ -21,6 +21,7 @@ SceneTransition="*uid://cgfw321vdwl4n"
 DialogManager="*uid://bf4kssuf5hvi5"
 GState="*uid://wb86sw602yqf"
 GResource="*uid://dh5j41ulr12lu"
+DeckManager="*uid://ixlc0d4rgdiy"
 
 [display]
 

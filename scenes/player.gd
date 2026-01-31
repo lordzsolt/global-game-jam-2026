@@ -10,16 +10,10 @@ func _input(_event: InputEvent) -> void:
 
 	var mouse_pos = get_global_mouse_position()
 	var rect = Rect2(%maskArea.global_position, %maskArea.size)
-	if !rect.has_point(mouse_pos):
-		return
 
-	%maskTexture.visible = true
+	if rect.has_point(mouse_pos):
+		%maskTexture.visible = true
+		DeckManager.play_card(GState.draggable_mask.index)
 
-
-func _on_mask_area_mouse_entered() -> void:
-	print("Mouse entered")
-
-
-
-func _on_mask_area_mouse_exited() -> void:
-	print("Mouse exited")
+	GState.draggable_mask.visible = false
+	GState.draggable_mask.mask = null

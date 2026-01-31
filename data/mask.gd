@@ -3,15 +3,15 @@ class_name Mask
 
 const N_MASK_TYPES := 9
 enum MaskType {
-	Embarassment,
-	ConfidentLie,
-	Facts,
+	Embarass,
+	ConfidentLie, # Sales Expert
+	Facts, # Interviewer
 	Rage,
-	Insult,
+	Insult, # CEO
 	BrownNosing,
-	EmotionalManipulation,
+	EmotionalManipulation, # HR Manager
 	ShiftTheBlame,
-	CallInSick
+	CallInSick # Idea Guy
 }
 
 const ADV_BY_DISTANCE := {
@@ -45,7 +45,7 @@ var icon: Texture2D:
 		match maskType:
 			MaskType.EmotionalManipulation:
 				return GResource.emotionalManipulationTexture
-			MaskType.Embarassment:
+			MaskType.Embarass:
 				return GResource.embarassmentTexture
 			MaskType.ConfidentLie:
 				return GResource.confidentLieTexture
