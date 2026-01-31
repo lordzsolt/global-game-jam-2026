@@ -5,11 +5,12 @@ extends HSlider
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#Put here sth like player.conversationLevelChanged.connect(update)
-	update()
+	#update()
+	pass
 
 
-func update() -> void:
-	value = internalDummyValue #dummy value, actually put here sth like "player.conversationLevel"
+func _process(_delta: float) -> void:
+	value = GState.health #dummy value, actually put here sth like "player.conversationLevel"
 
 #Dummy function
 func updateWith(newValue : float) -> void:
