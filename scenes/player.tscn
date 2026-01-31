@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://bf1of67no735k"]
+[gd_scene format=3 uid="uid://c6n6jrfe0ix45"]
 
 [ext_resource type="Texture2D" uid="uid://dtumy1ql8jx1k" path="res://art/Sketch Assets/Player.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://dadov2vc0yjlt" path="res://scenes/player.gd" id="1_g2els"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3vyb7"]
 
@@ -13,8 +14,23 @@ offset_bottom = -413.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_3vyb7")
+script = ExtResource("1_g2els")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=504603977]
 layout_mode = 2
 texture = ExtResource("1_3vyb7")
 stretch_mode = 2
+
+[node name="maskArea" type="Control" parent="TextureRect" unique_id=2043784328]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_left = 0.55
+anchor_right = 0.8
+anchor_bottom = 0.25
+grow_horizontal = 0
+
+[node name="Mask" type="TextureRect" parent="TextureRect/maskArea" unique_id=1968774473]
+layout_mode = 0
+
+[connection signal="mouse_entered" from="TextureRect/maskArea" to="." method="_on_mask_area_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect/maskArea" to="." method="_on_mask_area_mouse_exited"]

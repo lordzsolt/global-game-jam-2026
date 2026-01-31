@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dl4o261xicr6v"]
 
-[ext_resource type="Texture2D" uid="uid://v1nkq4hrmn3p" path="res://art/mask.png" id="1_d81rb"]
 [ext_resource type="Script" uid="uid://bpbmyml5pewt3" path="res://scenes/card.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://cnm4l70bmvg36" path="res://art/Sketch Assets/MaskCardLady.png" id="2_6u4wf"]
 
 [node name="PanelContainer" type="PanelContainer" unique_id=619354858]
 anchors_preset = 15
@@ -15,4 +15,4 @@ script = ExtResource("1_script")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1104888339]
 layout_mode = 2
-texture = ExtResource("1_d81rb")
+texture = ExtResource("2_6u4wf")
