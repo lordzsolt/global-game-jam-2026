@@ -1,9 +1,58 @@
-[gd_scene format=3 uid="uid://37opfwfq2i2e"]
+[gd_scene format=3 uid="uid://kb06qr4wrry3"]
 
-[node name="Bar" type="Control" unique_id=1731218618]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="Texture2D" uid="uid://dhaft1f27ojf2" path="res://art/Sketch Assets/ProgressbarSlider.png" id="1_bwlfd"]
+[ext_resource type="Texture2D" uid="uid://0i3lq4hq827" path="res://art/Sketch Assets/ProgressBar.png" id="2_x848m"]
+[ext_resource type="Script" uid="uid://ctp7ga583ipdv" path="res://scenes/bar.gd" id="3_x848m"]
+[ext_resource type="Script" uid="uid://uimc6ypc0qyk" path="res://scripts/substract.gd" id="4_qdsxc"]
+[ext_resource type="Script" uid="uid://bxpwg6lqrelsa" path="res://scripts/add.gd" id="5_efgdo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bwlfd"]
+texture = ExtResource("2_x848m")
+expand_margin_top = 20.0
+expand_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x848m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qdsxc"]
+
+[node name="ConversationBar" type="HSlider" unique_id=1897308321]
+anchors_preset = -1
+anchor_right = 0.56600004
+anchor_bottom = 0.128
+offset_left = 1.0
+offset_right = -0.032043457
+offset_bottom = 0.055999756
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/center_grabber = 0
+theme_override_icons/grabber = ExtResource("1_bwlfd")
+theme_override_icons/grabber_highlight = ExtResource("1_bwlfd")
+theme_override_icons/grabber_disabled = ExtResource("1_bwlfd")
+theme_override_styles/slider = SubResource("StyleBoxTexture_bwlfd")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_x848m")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_qdsxc")
+max_value = 1.0
+step = 0.01
+value = 0.5
+editable = false
+script = ExtResource("3_x848m")
+
+[node name="Substract" type="Button" parent="." unique_id=1802930152 node_paths=PackedStringArray("bar")]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 32.0
+offset_right = 192.0
+offset_bottom = 69.0
+text = "EMOTIONAL DAMAGE"
+script = ExtResource("4_qdsxc")
+bar = NodePath("..")
+
+[node name="Add" type="Button" parent="." unique_id=1821125769 node_paths=PackedStringArray("bar")]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 32.0
+offset_right = 637.0
+offset_bottom = 69.0
+text = "BURN THEM"
+script = ExtResource("5_efgdo")
+bar = NodePath("..")
