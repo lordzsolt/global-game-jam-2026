@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneTransition="*uid://cgfw321vdwl4n"
+Gstate="*uid://wb86sw602yqf"
+
 [display]
 
 window/size/viewport_width=1920
