@@ -3,32 +3,28 @@ class_name Mask
 
 const N_MASK_TYPES := 9
 enum MaskType {
-	Embarassment,
-	ConfidentLie,
-	Facts,
+	Embarass,
+	ConfidentLie, # Sales Expert
+	Facts, # Interviewer
 	Rage,
-	Insult,
+	Insult, # CEO
 	BrownNosing,
-	EmotionalManipulation,
+	EmotionalManipulation, # HR Manager
 	ShiftTheBlame,
-	CallInSick
+	CallInSick # Idea Guy
 }
 
-const ADV_BY_DISTANCE := {
-	0: 1.0,
-	1: 2.0,
-	2: 1.5,
-	3: 1.25,
-	4: 1.0
-}
-
-const DISADV_BY_DISTANCE := {
-	0: 1.0,
-	1: 0.0,
-	2: 0.75,
-	3: 0.85,
-	4: 1.0
-}
+const DAMAGE_BY_DISTANCE := [
+	1.0,
+	2.0,
+	1,
+	0.5,
+	0.25,
+	-0.25,
+	-0.5,
+	-1,
+	-2.0,
+]
 
 @export var name: String = ""
 @export var description: String = ""
@@ -45,7 +41,7 @@ var icon: Texture2D:
 		match maskType:
 			MaskType.EmotionalManipulation:
 				return GResource.emotionalManipulationTexture
-			MaskType.Embarassment:
+			MaskType.Embarass:
 				return GResource.embarassmentTexture
 			MaskType.ConfidentLie:
 				return GResource.confidentLieTexture
@@ -64,24 +60,10 @@ var icon: Texture2D:
 			_:
 				return null
 
-static func signed_ring_distance(attacker: MaskType, defender: MaskType, n: int = N_MASK_TYPES) -> int:
-	var half = n / 2
-	return int(posmod(defender - attacker + half, n)) - half
+static func calculate_damage(enemyMask: MaskType, playerMask: MaskType) -> float:
+	var distance = abs(enemyMask - playerMask)
+	return DAMAGE_BY_DISTANCE[distance]
 
-static func calc_damage_multiplier(enemyMask: MaskType, playerMask: MaskType) -> float:
-	var dist = signed_ring_distance(enemyMask, playerMask)
-
-	if(dist > 0):
-		return float(ADV_BY_DISTANCE.get(abs(dist), 1.0))
-	elif(dist < 0):
-		return float(DISADV_BY_DISTANCE.get(abs(dist), 1.0))
-	else:
-		return 1.0
-
-static func calc_damage_dealt(enemyMask: MaskType, playerMask: MaskType) -> float:
-	var multiplier = calc_damage_multiplier(enemyMask, playerMask)
-
-	return 1.0 * multiplier
 
 # Prints out the damage matrix
 # Rows = attacker, Columns = defender
@@ -95,5 +77,5 @@ static func print_multiplier_matrix() -> void:
 	for att in range(N_MASK_TYPES):
 		var line = "%7d |" % att
 		for def in range(N_MASK_TYPES):
-			line += " %6.2f" % calc_damage_multiplier(att, def)
+			line += " %6.2f" % calculate_damage(att, def)
 		print(line)

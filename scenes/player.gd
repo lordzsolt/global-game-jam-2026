@@ -12,19 +12,16 @@ func _input(_event: InputEvent) -> void:
 
 	var mouse_pos = get_global_mouse_position()
 	var rect = Rect2(%maskArea.global_position, %maskArea.size)
-	if !rect.has_point(mouse_pos):
-		return
-
-	%maskTexture.visible = true
-	var lines: Array[String] = ["Hehe!", "Im so cool.", "The coolness emotion beats all other emotions, as well as the elements themselves :P"]
-	dialog_manager.start_dialog(lines)
 
 
+	if rect.has_point(mouse_pos):
+		%maskTexture.visible = true
+		DeckManager.play_card(GState.draggable_mask.index)
 
-func _on_mask_area_mouse_entered() -> void:
-	print("Mouse entered")
+		var mask_type = GState.draggable_mask.mask.maskType
+		var dialog_line = DialogOptionsManager.select_dialog_line(mask_type)
+		print(Mask.MaskType.keys()[mask_type], ": ", dialog_line)
+		dialog_manager.start_dialog([dialog_line])
 
-
-
-func _on_mask_area_mouse_exited() -> void:
-	print("Mouse exited")
+	GState.draggable_mask.visible = false
+	GState.draggable_mask.mask = null

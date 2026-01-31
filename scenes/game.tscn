@@ -62,26 +62,6 @@ grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 
-[node name="mask0" parent="masksContainer" unique_id=1214670042 instance=ExtResource("2_lnu2h")]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="mask1" parent="masksContainer" unique_id=619354858 instance=ExtResource("2_lnu2h")]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="mask2" parent="masksContainer" unique_id=428339676 instance=ExtResource("2_lnu2h")]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="mask3" parent="masksContainer" unique_id=348766782 instance=ExtResource("2_lnu2h")]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="mask4" parent="masksContainer" unique_id=521034854 instance=ExtResource("2_lnu2h")]
-unique_name_in_owner = true
-layout_mode = 2
-
 [node name="ColorRect" type="ColorRect" parent="masksContainer" unique_id=741493596]
 custom_minimum_size = Vector2(0, 145)
 layout_mode = 2
