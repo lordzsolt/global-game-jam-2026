@@ -8,7 +8,6 @@ func _ready() -> void:
 	update()
 
 
-
 func update() -> void:
 	value = internalDummyValue #dummy value, actually put here sth like "player.conversationLevel"
 
