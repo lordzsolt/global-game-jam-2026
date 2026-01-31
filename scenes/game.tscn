@@ -37,6 +37,18 @@ offset_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 0
 
+[node name="Opponent" parent="." unique_id=1592618247 instance=ExtResource("5_iywne")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+offset_left = -749.0
+offset_top = -663.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
+
 [node name="masksContainer" type="HBoxContainer" parent="." unique_id=1929920002]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 96)
@@ -52,15 +64,3 @@ alignment = 1
 
 [node name="PanelContainer" parent="masksContainer" unique_id=619354858 instance=ExtResource("2_lnu2h")]
 layout_mode = 2
-
-[node name="Opponent" parent="." unique_id=1592618247 instance=ExtResource("5_iywne")]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-offset_left = -749.0
-offset_top = -663.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 0
-grow_vertical = 0
