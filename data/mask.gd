@@ -36,7 +36,7 @@ const DISADV_BY_DISTANCE := {
 
 static func create(maskType: MaskType) -> Mask:
 	var mask = Mask.new()
-	mask.maskType = type
+	mask.maskType = maskType
 	return mask
 
 
