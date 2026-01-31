@@ -23,7 +23,8 @@ func _input(_event: InputEvent) -> void:
 
 		var dialog_line = DialogOptionsManager.select_dialog_line(mask_type)
 		print(Mask.MaskType.keys()[mask_type], ": ", dialog_line)
-		dialog_manager.start_dialog([dialog_line])
+		var array: Array[String] = [dialog_line]
+		dialog_manager.start_dialog(array)
 
 	GState.draggable_mask.visible = false
 	GState.is_dragging = false

@@ -18,11 +18,11 @@ var can_advance_line = false
 func start_dialog(lines: Array[String]) -> void:
 	if is_dialog_active:
 		return #One DialogManager only does one Dialog at a time
-		
+
 	dialog_lines = lines
 	text_box_position = speech_bubble_point.global_position
 	_show_text_box()
-	
+
 	is_dialog_active = true
 
 
@@ -33,7 +33,7 @@ func _show_text_box():
 	text_box.global_position = text_box_position
 	text_box.display_text(dialog_lines[current_lin_index])
 	can_advance_line = false
-	
+
 func _on_text_box_finished_displaying():
 	can_advance_line = true
 
@@ -44,11 +44,11 @@ func _unhandled_input(event):
 		can_advance_line
 	):
 		text_box.queue_free()
-		
+
 		current_lin_index += 1
 		if current_lin_index >= dialog_lines.size():
 			is_dialog_active = false
 			current_lin_index = 0
 			return
-		
+
 		_show_text_box()
