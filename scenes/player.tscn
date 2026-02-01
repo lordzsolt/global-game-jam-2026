@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://g2qat42rhqve"]
 
-[ext_resource type="Texture2D" uid="uid://dtumy1ql8jx1k" path="res://art/Sketch Assets/Player.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://dadov2vc0yjlt" path="res://scenes/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://os87rm22f3o4" path="res://art/Sketch Assets/WornMask.png" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://dmflo44dndqm8" path="res://art/ArtAssets_Clean/Art_Characters/Character_Player.png" id="2_fjrip"]
+[ext_resource type="Texture2D" uid="uid://j50fl4nmolxy" path="res://art/ArtAssets_Clean/Art_Masks/WornMask_Brownnose.png" id="3_smehm"]
 [ext_resource type="Script" uid="uid://bf4kssuf5hvi5" path="res://scenes/DialogManager.gd" id="4_dqkch"]
 [ext_resource type="PackedScene" uid="uid://bddri6x0w3rrd" path="res://scenes/text_box_player.tscn" id="5_qlg0r"]
 [ext_resource type="AudioStream" uid="uid://n6pd2ejqw0ok" path="res://audio/PlayerSpeech.wav" id="6_tuyoq"]
@@ -14,7 +14,7 @@
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1403.999
+offset_right = -1450.0
 offset_bottom = -413.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -23,8 +23,8 @@ script = ExtResource("1_g2els")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=504603977]
 layout_mode = 2
-texture = ExtResource("1_3vyb7")
-stretch_mode = 2
+texture = ExtResource("2_fjrip")
+expand_mode = 4
 
 [node name="maskArea" type="Control" parent="TextureRect" unique_id=2043784328]
 unique_name_in_owner = true
@@ -37,15 +37,14 @@ mouse_filter = 1
 
 [node name="maskTexture" type="TextureRect" parent="TextureRect/maskArea" unique_id=1968774473]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.25
-anchor_top = 0.1
-anchor_right = 0.8
-anchor_bottom = 0.58
+anchor_left = 0.1
+anchor_top = 0.25
+anchor_right = 0.75
+anchor_bottom = 0.7
 grow_horizontal = 2
-texture = ExtResource("3_qhqgy")
+texture = ExtResource("3_smehm")
 expand_mode = 1
 
 [node name="DialogManager" type="Control" parent="." unique_id=127698833]
