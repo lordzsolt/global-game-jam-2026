@@ -1,5 +1,7 @@
 extends MarginContainer
 
+@export var align_to_right: bool
+
 @onready var label: Label = $MarginContainer/Label
 @onready var timer: Timer = $LetterDisplayTimer
 
@@ -18,6 +20,7 @@ signal finished_displaying()
 func display_text(text_to_display: String) -> void:
 	#Realign to bottom left:
 	global_position.y -= size.y
+
 	
 
 	text = text_to_display
@@ -32,7 +35,10 @@ func display_text(text_to_display: String) -> void:
 		await resized # wait for y to resize
 		custom_minimum_size.y = size.y
 	
-
+	if align_to_right:
+		#Align to bottom right instead
+		global_position.x -= size.x
+	
 	label.text = ""
 	_display_letter()
 

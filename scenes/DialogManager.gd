@@ -1,6 +1,6 @@
 extends Node
 
-@onready var text_box_scene = preload("res://text_box.tscn")
+@export var text_box_scene: PackedScene
 
 # Places the speech bubble.
 @onready var speech_bubble_point: Panel = $SpeechBubblePoint

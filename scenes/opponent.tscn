@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://yggec4c3irbc" path="res://scenes/opponent.gd" id="1_ha0xr"]
 [ext_resource type="Texture2D" uid="uid://dbij7x321nfpg" path="res://art/Sketch Assets/Opponent.png" id="1_ocjdi"]
+[ext_resource type="Script" uid="uid://bf4kssuf5hvi5" path="res://scenes/DialogManager.gd" id="3_8l8e6"]
+[ext_resource type="PackedScene" uid="uid://c5fxromhqfc8o" path="res://scenes/text_box_opponent.tscn" id="4_w8tlm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ha0xr"]
 
@@ -20,3 +22,16 @@ script = ExtResource("1_ha0xr")
 layout_mode = 2
 texture = ExtResource("1_ocjdi")
 stretch_mode = 2
+
+[node name="DialogManager" type="Control" parent="." unique_id=1260652240]
+layout_mode = 2
+script = ExtResource("3_8l8e6")
+text_box_scene = ExtResource("4_w8tlm")
+align_to_right = true
+
+[node name="SpeechBubblePoint" type="Panel" parent="DialogManager" unique_id=1819339818]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 130.0
+offset_right = 428.0
+offset_bottom = 130.0

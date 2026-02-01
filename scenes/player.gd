@@ -2,6 +2,7 @@ extends PanelContainer
 
 @onready var dialog_manager: Control = $DialogManager
 
+signal testSignal
 
 func _input(_event: InputEvent) -> void:
 	if !Input.is_action_just_released("mouse_left"):
@@ -29,6 +30,7 @@ func _input(_event: InputEvent) -> void:
 		dialog_manager.interrupt_dialogue()
 		var array: Array[String] = [dialog_line]
 		dialog_manager.start_dialog(array)
+		testSignal.emit()
 
 	GState.draggable_mask.visible = false
 	GState.is_dragging = false
