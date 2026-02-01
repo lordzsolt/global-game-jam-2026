@@ -14,6 +14,7 @@ var available_masks: Array[Mask.MaskType] = [
 	Mask.MaskType.Rage,
 	Mask.MaskType.BrownNosing,
 	Mask.MaskType.ShiftTheBlame,
+	Mask.MaskType.Insult,
 ]
 
 var inventory: Array[Mask.MaskType] = []

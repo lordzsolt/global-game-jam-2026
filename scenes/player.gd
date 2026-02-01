@@ -14,18 +14,17 @@ func _input(_event: InputEvent) -> void:
 	var mouse_pos = get_global_mouse_position()
 	var rect = Rect2(%maskArea.global_position, %maskArea.size)
 
-
 	if rect.has_point(mouse_pos):
 		var mask_type = GState.draggable_mask.maskType
 
 		%maskTexture.texture = Mask.worn_icon(mask_type)
 		%maskTexture.visible = true
 		DeckManager.play_card(GState.draggable_mask.index)
-		
+
 		# Get dialogue line
 		var dialog_line = DialogOptionsManager.select_dialog_line(mask_type)
 		print(Mask.MaskType.keys()[mask_type], ": ", dialog_line)
-		
+
 		# Display it
 		dialog_manager.interrupt_dialogue()
 		var array: Array[String] = [dialog_line]
