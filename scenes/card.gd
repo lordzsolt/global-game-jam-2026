@@ -61,6 +61,7 @@ func _start_drag() -> void:
 func _stop_drag() -> void:
 	is_dragging = false
 	GState.is_dragging = false
+	GState.draggable_mask.maskType = -1
 
 
 func _on_mouse_entered() -> void:

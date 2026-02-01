@@ -24,7 +24,7 @@ func _input(_event: InputEvent) -> void:
 	if !Input.is_action_just_released("mouse_left"):
 		return
 
-	if GState.draggable_mask == null:
+	if GState.draggable_mask == null || GState.draggable_mask.maskType == -1:
 		return
 
 	var mouse_pos = get_global_mouse_position()
@@ -47,6 +47,8 @@ func _input(_event: InputEvent) -> void:
 		var array: Array[String] = [dialog_line]
 		dialog_manager.start_dialog(array)
 		dialog_started.emit()
+
+		GState.draggable_mask.maskType = -1
 
 	GState.draggable_mask.visible = false
 	GState.is_dragging = false

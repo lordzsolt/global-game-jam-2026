@@ -62,6 +62,8 @@ func handle_turn_end() -> void:
 	var newHealth = GState.health
 	var healthDiff = newHealth - oldHealth
 
+
+
 	var effectiveness = ""
 
 	if(healthDiff <= -2.0):
