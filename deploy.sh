@@ -7,4 +7,4 @@ set -e
 
 /Applications/Godot.app/Contents/MacOS/Godot --headless --export-release Web ./export/index.html
 
-butler push export/. ...:html
+butler push export/. joltsmith/intern-from-hell:html
