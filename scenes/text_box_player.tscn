@@ -37,4 +37,6 @@ theme_override_font_sizes/font_size = 25
 [node name="LetterDisplayTimer" type="Timer" parent="." unique_id=1489893536]
 one_shot = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=870000673]
+
 [connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]

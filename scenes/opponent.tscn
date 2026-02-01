@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dbij7x321nfpg" path="res://art/Sketch Assets/Opponent.png" id="1_ocjdi"]
 [ext_resource type="Script" uid="uid://bf4kssuf5hvi5" path="res://scenes/DialogManager.gd" id="3_8l8e6"]
 [ext_resource type="PackedScene" uid="uid://c5fxromhqfc8o" path="res://scenes/text_box_opponent.tscn" id="4_w8tlm"]
+[ext_resource type="AudioStream" uid="uid://c2eeftjranfaq" path="res://audio/OpponentSpeech.wav" id="5_dymdi"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ha0xr"]
 
@@ -27,6 +28,7 @@ stretch_mode = 2
 layout_mode = 2
 script = ExtResource("3_8l8e6")
 text_box_scene = ExtResource("4_w8tlm")
+sfx = ExtResource("5_dymdi")
 
 [node name="SpeechBubblePoint" type="Panel" parent="DialogManager" unique_id=1819339818]
 layout_mode = 0

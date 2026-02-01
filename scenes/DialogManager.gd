@@ -15,6 +15,8 @@ var current_lin_index = 0
 var text_box
 var text_box_position: Vector2
 
+@export var sfx: AudioStream  
+
 var is_dialog_active = false
 var can_advance_line = false
 
@@ -34,7 +36,7 @@ func _show_text_box():
 	text_box.finished_displaying.connect(_on_text_box_finished_displaying)
 	get_tree().root.add_child(text_box)
 	text_box.global_position = text_box_position
-	text_box.display_text(dialog_lines[current_lin_index])
+	text_box.display_text(dialog_lines[current_lin_index], sfx)
 	can_advance_line = false
 
 func _on_text_box_finished_displaying():
