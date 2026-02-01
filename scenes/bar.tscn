@@ -3,8 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://dhaft1f27ojf2" path="res://art/Sketch Assets/ProgressbarSlider.png" id="1_bwlfd"]
 [ext_resource type="Texture2D" uid="uid://0i3lq4hq827" path="res://art/Sketch Assets/ProgressBar.png" id="2_x848m"]
 [ext_resource type="Script" uid="uid://ctp7ga583ipdv" path="res://scenes/bar.gd" id="3_x848m"]
-[ext_resource type="Script" uid="uid://uimc6ypc0qyk" path="res://scripts/substract.gd" id="4_qdsxc"]
-[ext_resource type="Script" uid="uid://bxpwg6lqrelsa" path="res://scripts/add.gd" id="5_efgdo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bwlfd"]
 texture = ExtResource("2_x848m")
@@ -37,33 +35,3 @@ step = 0.01
 value = 0.5
 editable = false
 script = ExtResource("3_x848m")
-
-[node name="Substract" type="Button" parent="." unique_id=1802930152 node_paths=PackedStringArray("bar")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.026
-anchor_top = 0.386
-anchor_right = 0.294
-anchor_bottom = 0.83100003
-offset_left = 0.048000336
-offset_top = -0.038002014
-offset_right = 0.31199646
-offset_bottom = 0.027000427
-text = "EMOTIONAL DAMAGE"
-script = ExtResource("4_qdsxc")
-bar = NodePath("..")
-
-[node name="Add" type="Button" parent="." unique_id=1821125769 node_paths=PackedStringArray("bar")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.70900005
-anchor_top = 0.386
-anchor_right = 0.97700006
-anchor_bottom = 0.83100003
-offset_left = -0.2680359
-offset_top = -0.038002014
-offset_right = -0.0040283203
-offset_bottom = 0.027000427
-text = "BURN THEM"
-script = ExtResource("5_efgdo")
-bar = NodePath("..")
