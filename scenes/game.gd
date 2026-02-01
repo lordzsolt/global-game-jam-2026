@@ -66,23 +66,23 @@ func handle_turn_end() -> void:
 
 	var effectiveness = ""
 
-	if(healthDiff <= -2.0):
+	if(healthDiff <= Mask.DAMAGE_BY_DISTANCE[8]):
 		effectiveness = "very ineffective"
-	elif(healthDiff <= -1.0):
+	elif(healthDiff <= Mask.DAMAGE_BY_DISTANCE[7]):
 		effectiveness = "ineffective"
-	elif(healthDiff <= -0.5):
+	elif(healthDiff <= Mask.DAMAGE_BY_DISTANCE[6]):
 		effectiveness = "somewhat ineffective"
-	elif(healthDiff <= -0.25):
+	elif(healthDiff <= Mask.DAMAGE_BY_DISTANCE[5]):
 		effectiveness = "a little ineffective"
-	elif(healthDiff <= 0):
+	elif(healthDiff <= Mask.DAMAGE_BY_DISTANCE[0]):
 		effectiveness = "useless"
-	elif(healthDiff <= 0.25):
+	elif(healthDiff <= Mask.DAMAGE_BY_DISTANCE[4]):
 		effectiveness = "a little effective"
-	elif(healthDiff <= 0.5):
+	elif(healthDiff <= Mask.DAMAGE_BY_DISTANCE[3]):
 		effectiveness = "somewhat effective"
-	elif(healthDiff <= 1.0):
+	elif(healthDiff <= Mask.DAMAGE_BY_DISTANCE[2]):
 		effectiveness = "effective"
-	elif(healthDiff <= 2.0):
+	elif(healthDiff <= Mask.DAMAGE_BY_DISTANCE[1]):
 		effectiveness = "very effective"
 
 	var turnDescription = "Your
