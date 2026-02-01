@@ -44,3 +44,7 @@ func _input(_event: InputEvent) -> void:
 
 	GState.draggable_mask.visible = false
 	GState.is_dragging = false
+
+
+func hide_dialog():
+	dialog_manager.interrupt_dialogue()

@@ -32,6 +32,7 @@ func _process(_delta: float) -> void:
 		card.index = i
 
 func start_turn() -> void:
+	player.hide_dialog()
 	opponent.say_something()
 
 func handle_turn_end() -> void:
@@ -41,4 +42,4 @@ func handle_turn_end() -> void:
 
 	HealthManager.calculate_new_health(player.chosen_mask, opponent.chosen_mask)
 
-	get_tree().create_timer(1.0).timeout.connect(start_turn)
+	get_tree().create_timer(2.0).timeout.connect(start_turn)
