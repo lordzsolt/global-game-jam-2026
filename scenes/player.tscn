@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bf4kssuf5hvi5" path="res://scenes/DialogManager.gd" id="4_dqkch"]
 [ext_resource type="PackedScene" uid="uid://bddri6x0w3rrd" path="res://scenes/text_box_player.tscn" id="5_qlg0r"]
 [ext_resource type="AudioStream" uid="uid://n6pd2ejqw0ok" path="res://audio/PlayerSpeech.wav" id="6_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://fc3ma554m6tc" path="res://audio/MaskEquip.wav" id="7_fjrip"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3vyb7"]
 
@@ -66,6 +67,9 @@ offset_right = -7.000763
 offset_bottom = 4.9339905
 
 [node name="MaskEquipSound" type="AudioStreamPlayer" parent="." unique_id=1368717448]
+stream = ExtResource("7_fjrip")
+volume_db = -5.0
+bus = &"SFX"
 
 [connection signal="mouse_entered" from="TextureRect/maskArea" to="." method="_on_mask_area_mouse_entered"]
 [connection signal="mouse_exited" from="TextureRect/maskArea" to="." method="_on_mask_area_mouse_exited"]

@@ -4,6 +4,9 @@ extends PanelContainer
 signal dialog_finished
 signal dialog_started
 
+@onready var mask_equip_sound: AudioStreamPlayer = $MaskEquipSound
+
+
 @onready var dialog_manager: DialogManager = $DialogManager
 var _dialog_option_manager: DialogOptionsManager
 var chosen_mask: Mask.MaskType
@@ -33,6 +36,7 @@ func _input(_event: InputEvent) -> void:
 		%maskTexture.texture = Mask.worn_icon(chosen_mask)
 		%maskTexture.visible = true
 		DeckManager.play_card(GState.draggable_mask.index)
+		mask_equip_sound.play()
 
 		# Get dialogue line
 		var dialog_line = _dialog_option_manager.select_dialog_line(chosen_mask)
