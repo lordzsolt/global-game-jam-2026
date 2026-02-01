@@ -27,7 +27,6 @@ stretch_mode = 2
 layout_mode = 2
 script = ExtResource("3_8l8e6")
 text_box_scene = ExtResource("4_w8tlm")
-align_to_right = true
 
 [node name="SpeechBubblePoint" type="Panel" parent="DialogManager" unique_id=1819339818]
 layout_mode = 0

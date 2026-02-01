@@ -1,12 +1,35 @@
+class_name Opponent
 extends PanelContainer
 
-@onready var dialog_manager: Control = $DialogManager
-@onready var player: PanelContainer = $"../Player"
+@onready var dialog_manager: DialogManager = $DialogManager
+var chosen_mask: Mask.MaskType
+
+var _dialogOptionsManager: DialogOptionsManager
+var _available_masks: Array[Mask.MaskType] = [
+	Mask.MaskType.Embarass,
+	Mask.MaskType.ConfidentLie,
+	Mask.MaskType.Facts,
+	Mask.MaskType.Rage,
+	Mask.MaskType.Insult,
+	Mask.MaskType.BrownNosing,
+	Mask.MaskType.EmotionalManipulation,
+	Mask.MaskType.ShiftTheBlame,
+	Mask.MaskType.CallInSick
+]
 
 func _ready() -> void:
-	player.testSignal.connect(testDisplay)
+	_dialogOptionsManager = DialogOptionsManager.create()
+	_dialogOptionsManager.add_options(Dialogs.idea_guy)
+	_dialogOptionsManager.add_options(Dialogs.hr_manager)
+
+	# Make idea guy more likely to insult (4 out of 12 items in the array are Insult, so pick_random is more likely to pick that one)
+	_available_masks.append(Mask.MaskType.Insult)
+	_available_masks.append(Mask.MaskType.Insult)
+	_available_masks.append(Mask.MaskType.Insult)
 
 
-func testDisplay():
-	var array: Array[String] = ["Hehe I can talk too, now what.", "Ah yeah Im always angry I forgor >:(", "or actually uhm, Im the ideas guy so I always call in sick bye u won"]
+func say_something() -> void:
+	chosen_mask = _available_masks.pick_random()
+	var dialog = _dialogOptionsManager.select_dialog_line(chosen_mask)
+	var array: Array[String] = [dialog]
 	dialog_manager.start_dialog(array)

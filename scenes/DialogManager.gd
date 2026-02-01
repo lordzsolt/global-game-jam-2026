@@ -1,4 +1,7 @@
+class_name DialogManager
 extends Node
+
+signal text_finished
 
 @export var text_box_scene: PackedScene
 
@@ -36,6 +39,7 @@ func _show_text_box():
 
 func _on_text_box_finished_displaying():
 	can_advance_line = true
+	text_finished.emit()
 
 func _unhandled_input(event):
 	if(

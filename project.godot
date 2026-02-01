@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 GState="*uid://wb86sw602yqf"
 GResource="*uid://dh5j41ulr12lu"
-DialogOptionsManager="*uid://hkmcktpvignh"
 Dialogs="*uid://cm0o12ht5jthr"
 DeckManager="*uid://ixlc0d4rgdiy"
 SceneTransition="*uid://cgfw321vdwl4n"

@@ -1,8 +1,20 @@
+class_name Player
 extends PanelContainer
 
-@onready var dialog_manager: Control = $DialogManager
+signal dialog_finished
 
-signal testSignal
+@onready var dialog_manager: DialogManager = $DialogManager
+var _dialog_option_manager: DialogOptionsManager
+var chosen_mask: Mask.MaskType
+
+func _ready() -> void:
+	_dialog_option_manager = DialogOptionsManager.create()
+	_dialog_option_manager.add_options(Dialogs.job_interview)
+	_dialog_option_manager.add_options(Dialogs.sales_expert)
+
+	dialog_manager.text_finished.connect(func():
+		dialog_finished.emit()
+	)
 
 func _input(_event: InputEvent) -> void:
 	if !Input.is_action_just_released("mouse_left"):
@@ -15,21 +27,20 @@ func _input(_event: InputEvent) -> void:
 	var rect = Rect2(%maskArea.global_position, %maskArea.size)
 
 	if rect.has_point(mouse_pos):
-		var mask_type = GState.draggable_mask.maskType
+		chosen_mask = GState.draggable_mask.maskType
 
-		%maskTexture.texture = Mask.worn_icon(mask_type)
+		%maskTexture.texture = Mask.worn_icon(chosen_mask)
 		%maskTexture.visible = true
 		DeckManager.play_card(GState.draggable_mask.index)
 
 		# Get dialogue line
-		var dialog_line = DialogOptionsManager.select_dialog_line(mask_type)
-		print(Mask.MaskType.keys()[mask_type], ": ", dialog_line)
+		var dialog_line = _dialog_option_manager.select_dialog_line(chosen_mask)
+		print(Mask.MaskType.keys()[chosen_mask], ": ", dialog_line)
 
 		# Display it
 		dialog_manager.interrupt_dialogue()
 		var array: Array[String] = [dialog_line]
 		dialog_manager.start_dialog(array)
-		testSignal.emit()
 
 	GState.draggable_mask.visible = false
 	GState.is_dragging = false

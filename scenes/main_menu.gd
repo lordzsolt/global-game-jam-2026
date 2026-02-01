@@ -5,14 +5,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	STransition.instance = preload("res://scenes/scene_transition.tscn").instantiate()
 	Mask.print_multiplier_matrix()
-
-	var playerCard = Mask.MaskType.Embarass
-	var enemyCard = Mask.MaskType.ConfidentLie
-
-	HealthManager.calculate_new_health(playerCard, enemyCard)
-
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
