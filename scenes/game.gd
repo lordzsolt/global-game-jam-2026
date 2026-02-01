@@ -7,6 +7,7 @@ const CardScene = preload("res://scenes/card.tscn")
 @onready var turnDescriptionLabel: RichTextLabel = $TurnDescriptionContainer/RichTextLabel
 
 var cards: Array[Card] = []
+var can_drag: bool = false
 
 func _ready() -> void:
 	GState.draggable_mask = %draggedMask
@@ -18,10 +19,21 @@ func _ready() -> void:
 		%masksContainer.add_child(card)
 		cards.append(card)
 
+	player.dialog_started.connect(
+		func():
+			can_drag = false
+	)
+
 	player.dialog_finished.connect(handle_turn_end)
+
+	opponent.dialog_manager.text_finished.connect(
+		func():
+			can_drag = true
+	)
 
 	# Start turn after 1 second delay
 	get_tree().create_timer(1.0).timeout.connect(start_turn)
+
 
 
 func _process(_delta: float) -> void:
@@ -32,12 +44,14 @@ func _process(_delta: float) -> void:
 		var card = cards[i]
 		card.maskType = GState.inventory[i]
 		card.index = i
+		card.can_drag = can_drag
 
 func start_turn() -> void:
 	turnDescriptionBox.visible = false
 	turnDescriptionLabel.visible = false
 	player.hide_dialog()
 	opponent.say_something()
+	can_drag = false
 
 func handle_turn_end() -> void:
 	# Show some text of what happened

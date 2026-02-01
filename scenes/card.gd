@@ -4,6 +4,7 @@ extends AltAspectRatioContainer
 var maskType: Mask.MaskType = -1
 var index: int
 
+var can_drag: bool = false
 var is_dragging := false
 
 var drag_offset := Vector2.ZERO
@@ -38,6 +39,9 @@ func _process(_delta: float) -> void:
 		_stop_drag()
 
 func _on_gui_input(event: InputEvent) -> void:
+	if !can_drag:
+		return
+
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:

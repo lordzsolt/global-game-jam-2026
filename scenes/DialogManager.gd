@@ -15,7 +15,7 @@ var current_lin_index = 0
 var text_box
 var text_box_position: Vector2
 
-@export var sfx: AudioStream  
+@export var sfx: AudioStream
 
 var is_dialog_active = false
 var can_advance_line = false
