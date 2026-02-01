@@ -47,22 +47,28 @@ func handle_turn_end() -> void:
 	HealthManager.calculate_new_health(player.chosen_mask, opponent.chosen_mask)
 	var newHealth = GState.health
 	var healthDiff = newHealth - oldHealth
-	
+
 	var effectiveness = ""
-	
-	if(healthDiff == -2.0):
-		effectiveness = "useless"
-	elif(healthDiff <= -1.0):
+
+	if(healthDiff <= -2.0):
 		effectiveness = "very ineffective"
-	elif(healthDiff <= -0.5):
+	elif(healthDiff <= -1.0):
 		effectiveness = "ineffective"
+	elif(healthDiff <= -0.5):
+		effectiveness = "somewhat ineffectiveness"
+	elif(healthDiff <= -0.25):
+		effectiveness = "a little ineffective"
+	elif(healthDiff <= 0):
+		effectiveness = "useless"
+	elif(healthDiff <= 0.25):
+		effectiveness = "a little effectiveness"
 	elif(healthDiff <= 0.5):
-		effectiveness = "of average effectiveness"
+		effectiveness = "somewhat effectiveness"
 	elif(healthDiff <= 1.0):
 		effectiveness = "effective"
 	elif(healthDiff <= 2.0):
 		effectiveness = "very effective"
-	
+
 	var turnDescription = "Your
 [b]{0}[/b]
 was
@@ -76,5 +82,5 @@ against the enemy's
 	turnDescriptionBox.visible = true
 	turnDescriptionLabel.text = turnDescription
 	turnDescriptionLabel.visible = true
-	
+
 	get_tree().create_timer(3.0).timeout.connect(start_turn)
