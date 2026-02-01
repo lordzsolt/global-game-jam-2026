@@ -50,6 +50,19 @@ func start_turn() -> void:
 	turnDescriptionBox.visible = false
 	turnDescriptionLabel.visible = false
 	player.hide_dialog()
+	opponent.hide_dialog()
+
+	if(GState.health <= -5.0):
+		# We lost the game
+		GState.game_won = false
+		SceneTransition.change_scene("res://scenes/game_over.tscn")
+		return
+	elif(GState.health >= 5.0):
+		# We won the game
+		GState.game_won = true
+		SceneTransition.change_scene("res://scenes/game_over.tscn")
+		return
+
 	opponent.say_something()
 	can_drag = false
 
@@ -98,14 +111,5 @@ against the enemy's
 	turnDescriptionBox.visible = true
 	turnDescriptionLabel.text = turnDescription
 	turnDescriptionLabel.visible = true
-
-	if(GState.health <= -5.0):
-		# We lost the game
-		GState.game_won = false
-		SceneTransition.change_scene("res://scenes/game_over.tscn")
-	elif(GState.health >= 5.0):
-		# We won the game
-		GState.game_won = true
-		SceneTransition.change_scene("res://scenes/game_over.tscn")
 
 	get_tree().create_timer(3.0).timeout.connect(start_turn)

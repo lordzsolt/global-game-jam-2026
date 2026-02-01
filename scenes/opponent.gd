@@ -27,6 +27,8 @@ func _ready() -> void:
 	#_available_masks.append(Mask.MaskType.Insult)
 	#_available_masks.append(Mask.MaskType.Insult)
 
+func hide_dialog():
+	dialog_manager.interrupt_dialogue()
 
 func say_something() -> void:
 	chosen_mask = _available_masks.pick_random()
