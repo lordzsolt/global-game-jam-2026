@@ -25,11 +25,6 @@ const DAMAGE_BY_DISTANCE := [
 	-2.0,
 ]
 
-static func create(maskType: MaskType) -> Mask:
-	var mask = Mask.new()
-	mask.maskType = maskType
-	return mask
-
 
 static func icon(maskType: Mask.MaskType) -> Texture2D:
 	match maskType:
