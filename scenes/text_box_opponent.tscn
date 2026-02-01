@@ -39,6 +39,6 @@ theme_override_font_sizes/font_size = 25
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=774174580]
-volume_db = -7.0
+volume_db = -15.0
 
 [connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]

@@ -12,8 +12,13 @@ config_version=5
 
 config/name="global-game-jam-2026"
 run/main_scene="uid://tk8t8y5sfpp3"
+run/disable_stdout=true
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://d2r7v3msuffad"
 
 [autoload]
 
@@ -22,6 +27,7 @@ GResource="*uid://dh5j41ulr12lu"
 Dialogs="*uid://cm0o12ht5jthr"
 DeckManager="*uid://ixlc0d4rgdiy"
 SceneTransition="*uid://cgfw321vdwl4n"
+Music="*uid://dvkeybceuwqwl"
 
 [display]
 

@@ -65,5 +65,7 @@ offset_top = 4.9339905
 offset_right = -7.000763
 offset_bottom = 4.9339905
 
+[node name="MaskEquipSound" type="AudioStreamPlayer" parent="." unique_id=1368717448]
+
 [connection signal="mouse_entered" from="TextureRect/maskArea" to="." method="_on_mask_area_mouse_entered"]
 [connection signal="mouse_exited" from="TextureRect/maskArea" to="." method="_on_mask_area_mouse_exited"]
