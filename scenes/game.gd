@@ -96,7 +96,7 @@ against the enemy's
 	turnDescriptionBox.visible = true
 	turnDescriptionLabel.text = turnDescription
 	turnDescriptionLabel.visible = true
-	
+
 	if(GState.health <= -5.0):
 		# We lost the game
 		GState.game_won = false

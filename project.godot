@@ -12,7 +12,6 @@ config_version=5
 
 config/name="global-game-jam-2026"
 run/main_scene="uid://tk8t8y5sfpp3"
-run/disable_stdout=true
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
