@@ -9,8 +9,10 @@ func _ready() -> void:
 	Mask.print_multiplier_matrix()
 
 	if Config.debug_skip_menu:
-		get_tree().change_scene_to_file("res://scenes/game.tscn")
+		call_deferred("_skip_main_menu")
 
+func _skip_main_menu():
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

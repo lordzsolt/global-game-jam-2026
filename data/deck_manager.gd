@@ -5,8 +5,8 @@ func start_round():
 	GState.inventory.clear()
 
 	for mask_type in GState.available_masks:
-		GState.deck.append(mask_type)
-		GState.deck.append(mask_type)
+		for i in range(GState.nr_each_mask):
+			GState.deck.append(mask_type)
 
 	GState.deck.shuffle()
 

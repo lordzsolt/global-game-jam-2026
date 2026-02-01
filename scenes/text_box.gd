@@ -1,3 +1,4 @@
+class_name TextBox
 extends MarginContainer
 
 @export var align_to_right: bool
@@ -37,11 +38,11 @@ func display_text(text_to_display: String, speech_sfx: AudioStream) -> void:
 		await resized # wait for x to resize
 		await resized # wait for y to resize
 		custom_minimum_size.y = size.y
-	
+
 	if align_to_right:
 		#Align to bottom right instead
 		global_position.x -= size.x
-	
+
 	label.text = ""
 	_display_letter()
 

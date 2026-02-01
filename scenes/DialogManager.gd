@@ -40,27 +40,21 @@ func _show_text_box():
 	can_advance_line = false
 
 func _on_text_box_finished_displaying():
-	can_advance_line = true
+	is_dialog_active = false
+	current_lin_index = 0
 	text_finished.emit()
 
 func _unhandled_input(event):
-	if(
+	if (
 		event.is_action_pressed("advance_dialog") &&
-		is_dialog_active &&
-		can_advance_line
+		is_dialog_active
 	):
-		text_box.queue_free()
-
-		current_lin_index += 1
-		if current_lin_index >= dialog_lines.size():
-			is_dialog_active = false
-			current_lin_index = 0
-			return
-
-		_show_text_box()
+		# TODO: Either display a troll message, or display the entire text
+		return
 
 func interrupt_dialogue():
 	if text_box != null:
 		text_box.queue_free()
+
 	is_dialog_active = false
 	current_lin_index = 0

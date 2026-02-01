@@ -77,6 +77,13 @@ static func calculate_damage(enemyMask: MaskType, playerMask: MaskType) -> float
 	return DAMAGE_BY_DISTANCE[distance]
 
 
+static func get_mask_name(maskType: MaskType) -> String:
+	var mask_name = Mask.MaskType.find_key(maskType)
+	var re = RegEx.new()
+	re.compile("(?<!^)([A-Z])")
+	mask_name = re.sub(mask_name, " $1", true)
+	return mask_name
+
 # Prints out the damage matrix
 # Rows = attacker, Columns = defender
 static func print_multiplier_matrix() -> void:
