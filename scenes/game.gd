@@ -69,15 +69,15 @@ func handle_turn_end() -> void:
 	elif(healthDiff <= -1.0):
 		effectiveness = "ineffective"
 	elif(healthDiff <= -0.5):
-		effectiveness = "somewhat ineffectiveness"
+		effectiveness = "somewhat ineffective"
 	elif(healthDiff <= -0.25):
 		effectiveness = "a little ineffective"
 	elif(healthDiff <= 0):
 		effectiveness = "useless"
 	elif(healthDiff <= 0.25):
-		effectiveness = "a little effectiveness"
+		effectiveness = "a little effective"
 	elif(healthDiff <= 0.5):
-		effectiveness = "somewhat effectiveness"
+		effectiveness = "somewhat effective"
 	elif(healthDiff <= 1.0):
 		effectiveness = "effective"
 	elif(healthDiff <= 2.0):
@@ -96,5 +96,14 @@ against the enemy's
 	turnDescriptionBox.visible = true
 	turnDescriptionLabel.text = turnDescription
 	turnDescriptionLabel.visible = true
+	
+	if(GState.health <= -5.0):
+		# We lost the game
+		GState.game_won = false
+		SceneTransition.change_scene("res://scenes/game_over.tscn")
+	elif(GState.health >= 5.0):
+		# We won the game
+		GState.game_won = true
+		SceneTransition.change_scene("res://scenes/game_over.tscn")
 
 	get_tree().create_timer(3.0).timeout.connect(start_turn)

@@ -19,4 +19,5 @@ func _process(delta: float) -> void:
 
 func _on_retry_button_pressed() -> void:
 	GState.game_won = false
+	GState.health = 0.0
 	SceneTransition.change_scene("res://scenes/game.tscn")
