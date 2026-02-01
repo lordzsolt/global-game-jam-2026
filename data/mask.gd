@@ -73,7 +73,10 @@ static func worn_icon(maskType: MaskType) -> Texture2D:
 			return null
 
 static func calculate_damage(enemyMask: MaskType, playerMask: MaskType) -> float:
-	var distance = abs(enemyMask - playerMask)
+	var distance = enemyMask - playerMask
+	if distance < 0:
+		distance += N_MASK_TYPES
+
 	return DAMAGE_BY_DISTANCE[distance]
 
 
