@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cnnthot0gwh0t"]
 
 [ext_resource type="Script" uid="uid://cw2efspuhfk0y" path="res://scenes/game.gd" id="1_lnu2h"]
-[ext_resource type="Texture2D" uid="uid://bpl07j27ecpup" path="res://art/Sketch Assets/Background.png" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dl4o261xicr6v" path="res://scenes/card.tscn" id="2_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://cxohxncgrxui5" path="res://art/ArtAssets_Clean/GameBackground.png" id="2_p57ef"]
 [ext_resource type="PackedScene" uid="uid://g2qat42rhqve" path="res://scenes/player.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cbn2jqcslujp8" path="res://scenes/opponent.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://37opfwfq2i2e" path="res://scenes/bar.tscn" id="6_p57ef"]
@@ -23,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_lbhrr")
+texture = ExtResource("2_p57ef")
 expand_mode = 1
 
 [node name="Player" parent="." unique_id=465876557 instance=ExtResource("4_lbhrr")]
