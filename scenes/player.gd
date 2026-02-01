@@ -2,6 +2,7 @@ class_name Player
 extends PanelContainer
 
 signal dialog_finished
+signal dialog_started
 
 @onready var dialog_manager: DialogManager = $DialogManager
 var _dialog_option_manager: DialogOptionsManager
@@ -41,6 +42,7 @@ func _input(_event: InputEvent) -> void:
 		dialog_manager.interrupt_dialogue()
 		var array: Array[String] = [dialog_line]
 		dialog_manager.start_dialog(array)
+		dialog_started.emit()
 
 	GState.draggable_mask.visible = false
 	GState.is_dragging = false

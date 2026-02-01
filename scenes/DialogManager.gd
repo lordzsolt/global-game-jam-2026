@@ -15,7 +15,7 @@ var current_lin_index = 0
 var text_box
 var text_box_position: Vector2
 
-@export var sfx: AudioStream  
+@export var sfx: AudioStream
 
 var is_dialog_active = false
 var can_advance_line = false
@@ -24,6 +24,7 @@ func start_dialog(lines: Array[String]) -> void:
 	if is_dialog_active:
 		return #One DialogManager only does one Dialog at a time
 
+	interrupt_dialogue()
 	dialog_lines = lines
 	text_box_position = speech_bubble_point.global_position
 	_show_text_box()
