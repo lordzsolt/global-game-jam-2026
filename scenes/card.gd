@@ -27,10 +27,7 @@ func _process(_delta: float) -> void:
 	else:
 		%maskTextureRect.texture = Mask.icon(maskType)
 		#%label.text = str(maskType)
-		var mask_label_text = Mask.MaskType.find_key(maskType)
-		var re = RegEx.new()
-		re.compile("(?<!^)([A-Z])")
-		mask_label_text = re.sub(mask_label_text, " $1", true)
+		var mask_label_text = Mask.get_mask_name(maskType)
 		tooltip_label.text = mask_label_text
 
 	if !is_dragging:
