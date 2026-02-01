@@ -9,8 +9,16 @@ var is_dragging := false
 var drag_offset := Vector2.ZERO
 var original_parent: Node = null
 
+@onready var tooltip_label: Label = $Panel/PanelContainer/label
+@onready var tooltip_bg: PanelContainer = $Panel/PanelContainer
+
 func _ready() -> void:
 	gui_input.connect(_on_gui_input)
+	#print(maskType)
+	#var mask_label_text = Mask.MaskType.find_key(maskType)
+	#print(mask_label_text)
+	#tooltip_label.text = mask_label_text
+
 
 func _process(_delta: float) -> void:
 	if is_dragging || maskType == -1:
@@ -18,7 +26,12 @@ func _process(_delta: float) -> void:
 		%label.text = ""
 	else:
 		%maskTextureRect.texture = Mask.icon(maskType)
-		%label.text = str(maskType)
+		#%label.text = str(maskType)
+		var mask_label_text = Mask.MaskType.find_key(maskType)
+		var re = RegEx.new()
+		re.compile("(?<!^)([A-Z])")
+		mask_label_text = re.sub(mask_label_text, " $1", true)
+		tooltip_label.text = mask_label_text
 
 	if !is_dragging:
 		return
@@ -47,3 +60,13 @@ func _start_drag() -> void:
 func _stop_drag() -> void:
 	is_dragging = false
 	GState.is_dragging = false
+
+
+func _on_mouse_entered() -> void:
+	tooltip_label.visible = true
+	tooltip_bg.visible = true
+
+
+func _on_mouse_exited() -> void:
+	tooltip_label.visible = false
+	tooltip_bg.visible = false
