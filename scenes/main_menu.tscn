@@ -1,14 +1,16 @@
 [gd_scene format=3 uid="uid://tk8t8y5sfpp3"]
 
 [ext_resource type="Script" uid="uid://duu0dbg2x5rbe" path="res://scenes/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://cxohxncgrxui5" path="res://art/ArtAssets_Clean/GameBackground.png" id="2_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://cybvwj8lxc4ja" path="res://art/ArtAssets_Clean/Art_LogoTitle.png" id="2_ekxnf"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-shadow_size = 5
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(0, 0, 0, 0.39215687)
+shadow_color = Color(0, 0, 0, 0.2901961)
+shadow_offset = Vector2(10, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
+bg_color = Color(0.003921569, 0.003921569, 0.003921569, 0.39215687)
 
 [node name="MainMenu" type="Control" unique_id=967982782]
 layout_mode = 3
@@ -19,16 +21,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l6cm7")
 
+[node name="Background" type="TextureRect" parent="." unique_id=1978880561]
+layout_mode = 0
+offset_right = 3839.0
+offset_bottom = 2191.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_bqqt6")
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1582529255]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 195.0
+offset_top = 76.0
+offset_right = -205.0
+offset_bottom = -54.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer2" unique_id=2041475636]
+[node name="Title" type="TextureRect" parent="VBoxContainer2" unique_id=2041475636]
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("2_ekxnf")
@@ -46,8 +59,9 @@ vertical_alignment = 1
 [node name="StartGameButton" type="Button" parent="VBoxContainer2" unique_id=138709510]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.7019608, 0.98039216, 0.972549, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
 text = "Start Game"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2" unique_id=437264427]
@@ -57,6 +71,7 @@ size_flags_vertical = 3
 [node name="VolumeLabel" type="Label" parent="VBoxContainer2/VBoxContainer" unique_id=1423072035]
 layout_mode = 2
 size_flags_vertical = 7
+theme_override_colors/font_color = Color(0.7019608, 0.98039216, 0.972549, 1)
 text = "Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -73,12 +88,15 @@ size_flags_vertical = 1
 
 [node name="MuteSoundCheckbox" type="CheckBox" parent="VBoxContainer2/VBoxContainer/HBoxContainer" unique_id=2007772974]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.7019608, 0.98039216, 0.972549, 1)
 text = "Mute"
 
 [node name="ExitGameButton" type="Button" parent="VBoxContainer2" unique_id=1296279009]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.7019608, 0.98039216, 0.972549, 1)
 theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
 text = "Exit"
 
 [connection signal="pressed" from="VBoxContainer2/StartGameButton" to="." method="_on_start_pressed"]
