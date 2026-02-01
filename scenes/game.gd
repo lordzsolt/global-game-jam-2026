@@ -36,6 +36,7 @@ func _process(_delta: float) -> void:
 func start_turn() -> void:
 	turnDescriptionBox.visible = false
 	turnDescriptionLabel.visible = false
+	player.hide_dialog()
 	opponent.say_something()
 
 func handle_turn_end() -> void:
