@@ -4,6 +4,8 @@ var is_dragging: bool
 
 var inventory_size = 5
 
+var game_won: bool = false
+
 # TODO: Change this
 var health: float = 0.0
 var draggable_mask: Card
