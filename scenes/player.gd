@@ -6,12 +6,13 @@ signal dialog_started
 
 @onready var mask_equip_sound: AudioStreamPlayer = $MaskEquipSound
 
-
 @onready var dialog_manager: DialogManager = $DialogManager
 var _dialog_option_manager: DialogOptionsManager
 var chosen_mask: Mask.MaskType
 
 func _ready() -> void:
+	%maskTexture.visible = false
+
 	_dialog_option_manager = DialogOptionsManager.create()
 	_dialog_option_manager.add_options(Dialogs.job_interview)
 	_dialog_option_manager.add_options(Dialogs.sales_expert)

@@ -37,6 +37,7 @@ mouse_filter = 1
 
 [node name="maskTexture" type="TextureRect" parent="TextureRect/maskArea" unique_id=1968774473]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
