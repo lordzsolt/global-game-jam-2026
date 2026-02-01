@@ -8,6 +8,9 @@ func _ready() -> void:
 	#STransition.instance = preload("res://scenes/scene_transition.tscn").instantiate()
 	Mask.print_multiplier_matrix()
 
+	if Config.debug_skip_menu:
+		get_tree().change_scene_to_file("res://scenes/game.tscn")
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
