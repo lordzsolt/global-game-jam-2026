@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://37opfwfq2i2e"]
 
 [ext_resource type="Texture2D" uid="uid://dhaft1f27ojf2" path="res://art/Sketch Assets/ProgressbarSlider.png" id="1_bwlfd"]
-[ext_resource type="Texture2D" uid="uid://0i3lq4hq827" path="res://art/Sketch Assets/ProgressBar.png" id="2_x848m"]
+[ext_resource type="Texture2D" uid="uid://b0wwgrb8d1myx" path="res://art/ArtAssets_Clean/IfH_ProgressBarBlue.png" id="2_x848m"]
 [ext_resource type="Script" uid="uid://ctp7ga583ipdv" path="res://scenes/bar.gd" id="3_x848m"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bwlfd"]
