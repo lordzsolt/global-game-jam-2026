@@ -5,7 +5,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	STransition.instance = preload("res://scenes/scene_transition.tscn").instantiate()
+	#STransition.instance = preload("res://scenes/scene_transition.tscn").instantiate()
 	Mask.print_multiplier_matrix()
 
 
