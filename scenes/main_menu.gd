@@ -5,16 +5,10 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	STransition.instance = preload("res://scenes/scene_transition.tscn").instantiate()
-
-	DeckManager.instance = DeckManager.new()
-
 	Mask.print_multiplier_matrix()
 
-	var playerCard = Mask.new()
-	playerCard.maskType = Mask.MaskType.Embarass
-	var enemyCard = Mask.new()
-	enemyCard.maskType = Mask.MaskType.ConfidentLie
+	var playerCard = Mask.MaskType.Embarass
+	var enemyCard = Mask.MaskType.ConfidentLie
 
 	HealthManager.calculate_new_health(playerCard, enemyCard)
 
@@ -27,9 +21,7 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
-	#print("'Start Game' pressed")
-	#get_tree().change_scene_to_file("res://scenes/game.tscn")
-	STransition.instance.change_scene("res://scenes/game.tscn")
+	SceneTransition.change_scene("res://scenes/game.tscn")
 
 
 func _on_exit_game_button_pressed() -> void:

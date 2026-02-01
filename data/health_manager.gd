@@ -2,9 +2,9 @@ extends Resource
 
 class_name HealthManager
 
-static func calculate_new_health(playerCard: Mask, enemyCard: Mask) -> void:
-	var playerDamage = Mask.calculate_damage(enemyCard.maskType, playerCard.maskType)
-	var enemyDamage = Mask.calculate_damage(playerCard.maskType, enemyCard.maskType)
+static func calculate_new_health(playerCard: Mask.MaskType, enemyCard: Mask.MaskType) -> void:
+	var playerDamage = Mask.calculate_damage(enemyCard, playerCard)
+	var enemyDamage = Mask.calculate_damage(playerCard, enemyCard)
 
 	GState.health -= playerDamage - enemyDamage
 
