@@ -13,6 +13,8 @@ var original_parent: Node = null
 @onready var tooltip_label: Label = $Panel/PanelContainer/label
 @onready var tooltip_bg: PanelContainer = $Panel/PanelContainer
 
+var is_ready = false
+
 func _ready() -> void:
 	gui_input.connect(_on_gui_input)
 	#print(maskType)
@@ -65,10 +67,16 @@ func _stop_drag() -> void:
 
 
 func _on_mouse_entered() -> void:
+	# During Scene transition, if the mouse is over the mask, it might crash
+	if tooltip_label == null: return
+
 	tooltip_label.visible = true
 	tooltip_bg.visible = true
 
 
 func _on_mouse_exited() -> void:
+	# During Scene transition, if the mouse is over the mask, it might crash
+	if tooltip_label == null: return
+
 	tooltip_label.visible = false
 	tooltip_bg.visible = false

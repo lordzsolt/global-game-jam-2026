@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c4noydj6i5ica"]
+
+[ext_resource type="Script" uid="uid://c88dwtjjvn2bc" path="res://scenes/tutorial.gd" id="1_8ho6b"]
+[ext_resource type="Texture2D" uid="uid://bx1d2mv6ukb6w" path="res://art/ArtAssets_Clean/TutorialScreen.png" id="1_c13y7"]
+
+[node name="Tutorial" type="Control" unique_id=2053900955]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8ho6b")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1757506011]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_c13y7")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=1081862193]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9
+anchor_top = 0.95
+anchor_right = 0.95
+anchor_bottom = 0.95
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Click to proceed"
