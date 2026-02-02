@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dvkeybceuwqwl"]
 
-[ext_resource type="AudioStream" uid="uid://dbxi41j8iwgmy" path="res://music and sound/Intern from Hell.mp3" id="1_05ggv"]
+[ext_resource type="AudioStream" uid="uid://dbxi41j8iwgmy" path="res://audio/Intern from Hell.mp3" id="1_05ggv"]
 
 [node name="Music" type="AudioStreamPlayer" unique_id=604841052]
 stream = ExtResource("1_05ggv")

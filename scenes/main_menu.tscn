@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://duu0dbg2x5rbe" path="res://scenes/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://cxohxncgrxui5" path="res://art/ArtAssets_Clean/GameBackground.png" id="2_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://cybvwj8lxc4ja" path="res://art/ArtAssets_Clean/Art_LogoTitle.png" id="2_ekxnf"]
+[ext_resource type="AudioStream" uid="uid://bp0len403h3ts" path="res://audio/StartGame.wav" id="4_wu84c"]
+[ext_resource type="AudioStream" uid="uid://bm6weo12wg5e4" path="res://audio/Quit.wav" id="5_8ln24"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
 bg_color = Color(0, 0, 0, 0.39215687)
@@ -64,6 +66,10 @@ theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxFlat_wu84c")
 text = "Start Game"
 
+[node name="StartGameSound" type="AudioStreamPlayer" parent="VBoxContainer2/StartGameButton" unique_id=177566534]
+stream = ExtResource("4_wu84c")
+volume_db = -7.0
+
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2" unique_id=437264427]
 layout_mode = 2
 size_flags_vertical = 3
@@ -100,6 +106,10 @@ theme_override_colors/font_color = Color(0.7019608, 0.98039216, 0.972549, 1)
 theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
 text = "Exit"
+
+[node name="ExitGameSound" type="AudioStreamPlayer" parent="VBoxContainer2/ExitGameButton" unique_id=425095088]
+stream = ExtResource("5_8ln24")
+volume_db = -6.0
 
 [connection signal="pressed" from="VBoxContainer2/StartGameButton" to="." method="_on_start_pressed"]
 [connection signal="value_changed" from="VBoxContainer2/VBoxContainer/HBoxContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]

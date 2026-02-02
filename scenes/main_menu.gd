@@ -3,6 +3,9 @@ extends Control
 @onready var mute_cb: CheckBox = $VBoxContainer2/VBoxContainer/HBoxContainer/MuteSoundCheckbox
 @onready var volume_slider: HSlider = $VBoxContainer2/VBoxContainer/HBoxContainer/VolumeSlider
 
+@onready var start_game_sound: AudioStreamPlayer = $VBoxContainer2/StartGameButton/StartGameSound
+@onready var exit_game_sound: AudioStreamPlayer = $VBoxContainer2/ExitGameButton/ExitGameSound
+
 const bus_name := "Master"
 var bus_idx: int
 
@@ -36,10 +39,14 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
+	start_game_sound.play()
+	await start_game_sound.finished
 	SceneTransition.change_scene("res://scenes/tutorial.tscn")
 
 
 func _on_exit_game_button_pressed() -> void:
+	exit_game_sound.play()
+	await exit_game_sound.finished
 	get_tree().quit()
 
 
