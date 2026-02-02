@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dp7gcngyyx6l8"]
+
+[ext_resource type="AudioStream" uid="uid://0f1663qkuw3x" path="res://audio/Death.wav" id="1_8lio7"]
+
+[node name="DefeatSound" type="AudioStreamPlayer" unique_id=704605124]
+stream = ExtResource("1_8lio7")

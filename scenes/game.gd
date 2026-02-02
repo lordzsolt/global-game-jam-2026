@@ -55,6 +55,7 @@ func start_turn() -> void:
 	if(GState.health <= -5.0):
 		# We lost the game
 		GState.game_won = false
+		DefeatSound.play()
 		SceneTransition.change_scene("res://scenes/game_over.tscn")
 		return
 	elif(GState.health >= 5.0):

@@ -27,6 +27,7 @@ Dialogs="*uid://cm0o12ht5jthr"
 DeckManager="*uid://ixlc0d4rgdiy"
 SceneTransition="*uid://cgfw321vdwl4n"
 Music="*uid://dvkeybceuwqwl"
+DefeatSound="*uid://dp7gcngyyx6l8"
 
 [display]
 

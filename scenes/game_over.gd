@@ -3,6 +3,9 @@ extends Control
 @onready var winLoseRect: TextureRect = $VBoxContainer/TextureRect
 @onready var retryButton: Button = $VBoxContainer/RetryButton
 
+@onready var retry_sound: AudioStreamPlayer = $VBoxContainer/RetryButton/RetrySound
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if(GState.game_won):
@@ -20,4 +23,6 @@ func _process(delta: float) -> void:
 func _on_retry_button_pressed() -> void:
 	GState.game_won = false
 	GState.health = 0.0
+	retry_sound.play()
+	await retry_sound.finished
 	SceneTransition.change_scene("res://scenes/game.tscn")
